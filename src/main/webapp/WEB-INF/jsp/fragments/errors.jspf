@@ -1,0 +1,6 @@
+<c:if test="${not empty errors}">
+  <div class="message error" role="alert" id="erreurs">
+    <strong>Votre demande ne peut pas être validée :</strong>
+    <ul><c:forEach var="error" items="${errors}"><li><c:out value="${error.value}"/></li></c:forEach></ul>
+  </div>
+</c:if>

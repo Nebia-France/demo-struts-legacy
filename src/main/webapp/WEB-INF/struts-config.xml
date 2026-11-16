@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+        "https://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+  <form-beans>
+    <form-bean name="subscriptionForm" type="fr.demo.souscription.form.SubscriptionForm"/>
+  </form-beans>
+  <global-forwards>
+    <forward name="catalogue" path="/WEB-INF/jsp/catalogue.jsp"/>
+    <forward name="produit" path="/WEB-INF/jsp/produit.jsp"/>
+    <forward name="souscripteur" path="/WEB-INF/jsp/souscripteur.jsp"/>
+    <forward name="simulation" path="/WEB-INF/jsp/simulation.jsp"/>
+    <forward name="recapitulatif" path="/WEB-INF/jsp/recapitulatif.jsp"/>
+    <forward name="confirmation" path="/WEB-INF/jsp/confirmation.jsp"/>
+  </global-forwards>
+  <action-mappings>
+    <action path="/catalogue" type="fr.demo.souscription.action.CatalogAction"/>
+    <action path="/produit" type="fr.demo.souscription.action.CatalogAction"/>
+    <action path="/commencer" type="fr.demo.souscription.action.SubscriptionAction" name="subscriptionForm" scope="request" validate="false"/>
+    <action path="/souscripteur" type="fr.demo.souscription.action.SubscriptionAction" name="subscriptionForm" scope="request" validate="false"/>
+    <action path="/simulation" type="fr.demo.souscription.action.SubscriptionAction" name="subscriptionForm" scope="request" validate="false"/>
+    <action path="/recapitulatif" type="fr.demo.souscription.action.SubscriptionAction" name="subscriptionForm" scope="request" validate="false"/>
+    <action path="/confirmer" type="fr.demo.souscription.action.SubscriptionAction" name="subscriptionForm" scope="request" validate="false"/>
+    <action path="/confirmation" type="fr.demo.souscription.action.SubscriptionAction" name="subscriptionForm" scope="request" validate="false"/>
+  </action-mappings>
+  <message-resources parameter="ApplicationResources"/>
+</struts-config>

@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS subscriptions (
+  reference VARCHAR(36) PRIMARY KEY,
+  confirmation_key VARCHAR(36) NOT NULL UNIQUE,
+  product_code VARCHAR(24) NOT NULL,
+  product_name VARCHAR(80) NOT NULL,
+  product_profile VARCHAR(40) NOT NULL,
+  annual_rate DECIMAL(8,6) NOT NULL,
+  first_name VARCHAR(80) NOT NULL,
+  last_name VARCHAR(80) NOT NULL,
+  email VARCHAR(254) NOT NULL,
+  birth_date DATE NOT NULL,
+  initial_amount DECIMAL(14,2) NOT NULL,
+  monthly_amount DECIMAL(14,2) NOT NULL,
+  duration_years INTEGER NOT NULL,
+  contributed DECIMAL(14,2) NOT NULL,
+  final_capital DECIMAL(14,2) NOT NULL,
+  created_at TIMESTAMP NOT NULL,
+  CHECK (initial_amount BETWEEN 100 AND 100000),
+  CHECK (monthly_amount BETWEEN 0 AND 2000),
+  CHECK (duration_years BETWEEN 1 AND 30)
+);

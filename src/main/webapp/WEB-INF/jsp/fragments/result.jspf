@@ -1,0 +1,12 @@
+<table class="data-table financial">
+  <caption>Résultat indicatif de la simulation</caption>
+  <tbody>
+    <tr><th scope="row">Versement initial</th><td><fmt:formatNumber value="${result.initial}" type="currency" currencySymbol="€"/></td></tr>
+    <tr><th scope="row">Versement mensuel</th><td><fmt:formatNumber value="${result.monthly}" type="currency" currencySymbol="€"/></td></tr>
+    <tr><th scope="row">Durée du placement</th><td><c:out value="${result.years}"/> an(s)</td></tr>
+    <tr><th scope="row">Total de vos versements</th><td><fmt:formatNumber value="${result.contributed}" type="currency" currencySymbol="€"/></td></tr>
+    <tr><th scope="row">Gains estimés, hors frais et fiscalité</th><td><fmt:formatNumber value="${result.gains}" type="currency" currencySymbol="€"/></td></tr>
+    <tr class="total"><th scope="row">Capital final estimé</th><td id="capital-final"><fmt:formatNumber value="${result.finalCapital}" type="currency" currencySymbol="€"/></td></tr>
+  </tbody>
+</table>
+<p class="fine-print">Hypothèse constante de <fmt:formatNumber value="${product.ratePercent}" maxFractionDigits="0"/> % par an, capitalisation mensuelle et versements en fin de mois. Hors frais, fiscalité et inflation. Rendement non garanti.</p>

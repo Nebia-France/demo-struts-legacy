@@ -1,0 +1,41 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="html" uri="http://struts.apache.org/tags-html" %>
+<%@ taglib prefix="bean" uri="http://struts.apache.org/tags-bean" %>
+<fmt:setLocale value="fr_FR"/>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><c:out value="${pageTitle}" default="Information"/> | Financière Horizon</title>
+  <link rel="stylesheet" href="<c:url value='/assets/css/application.css'/>">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<div class="site">
+  <div class="utility"><span>Extranet Financière Horizon</span><span>Service épargne &amp; placements</span></div>
+  <header class="masthead">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">FH</span><div><strong>FINANCIÈRE HORIZON</strong><span>ÉPARGNE &amp; PLACEMENTS</span></div></div>
+    <div class="space-title">Espace souscription<br><span>Votre projet, étape par étape</span></div>
+  </header>
+  <nav class="tabs" aria-label="Navigation principale">
+    <a href="<c:url value='/catalogue.do'/>" class="${step == 1 ? 'selected' : ''}">Nos placements</a>
+    <span class="${step > 1 ? 'selected' : ''}">Souscription en ligne</span>
+  </nav>
+  <div class="workspace">
+    <aside class="sidebar">
+      <h2>VOTRE SOUSCRIPTION</h2>
+      <ol class="steps">
+        <li class="${step == 1 ? 'current' : ''}"><c:if test="${step == 1}"><span class="sr-only">Étape actuelle : </span></c:if>Choix du produit</li>
+        <li class="${step == 2 ? 'current' : ''}"><c:if test="${step == 2}"><span class="sr-only">Étape actuelle : </span></c:if>Souscripteur</li>
+        <li class="${step == 3 ? 'current' : ''}"><c:if test="${step == 3}"><span class="sr-only">Étape actuelle : </span></c:if>Simulation</li>
+        <li class="${step == 4 ? 'current' : ''}"><c:if test="${step == 4}"><span class="sr-only">Étape actuelle : </span></c:if>Récapitulatif</li>
+        <li class="${step == 5 ? 'current' : ''}"><c:if test="${step == 5}"><span class="sr-only">Étape actuelle : </span></c:if>Confirmation</li>
+      </ol>
+    </aside>
+    <main id="contenu">
+      <div class="breadcrumb"><a href="<c:url value='/catalogue.do'/>">Accueil</a> &gt; Épargne &gt; <c:out value="${pageTitle}" default="Information"/></div>
+      <h1><c:out value="${pageTitle}" default="Information"/></h1>
+      <%@ include file="errors.jspf" %>
